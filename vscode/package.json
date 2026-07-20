@@ -1,0 +1,25 @@
+{
+  "name": "jask",
+  "displayName": "jask",
+  "description": "jask language support for vs code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.125.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "jask",
+      "aliases": ["jask", "jask"],
+      "extensions": [".jask"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "jask",
+      "scopeName": "source.jask",
+      "path": "./syntaxes/jask.tmLanguage.json"
+    }]
+  }
+}

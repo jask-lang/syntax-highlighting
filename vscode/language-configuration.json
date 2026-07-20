@@ -1,0 +1,29 @@
+{
+    "comments": {
+        "lineComment": ";",
+        "blockComment": [ ";;", ";;" ]
+    },
+    "brackets": [
+        ["function", "end"],
+        ["struct", "endstruct"],
+        ["if", "endif"],
+        ["while", "endwhile"],
+        ["for", "endfor"],
+        ["(", ")"]
+    ],
+    "autoClosingPairs": [
+        { "open": "(", "close": ")" },
+        { "open": "\"", "close": "\"", "notIn": ["string"] },
+        { "open": ";;", "close": ";;", "notIn": ["string", "comment"] }
+    ],
+    "surroundingPairs": [
+        ["(", ")"],
+        ["\"", "\""]
+    ],
+    "folding": {
+        "markers": {
+            "start": "^\\s*(function|struct|if|while|for)\\b",
+            "end": "^\\s*(end|endstruct|endif|endwhile|endfor)\\b"
+        }
+    }
+}

@@ -1,0 +1,130 @@
+{
+    "$schema": "https://raw.githubusercontent.com/microsoft/vscode/main/src/vs/workbench/services/textMate/common/TMGrammar.schema.json",
+    "name": "jask",
+    "patterns": [
+        {
+            "include": "#comments-multi"
+        },
+        {
+            "include": "#comments-single"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#operators"
+        },
+        {
+            "include": "#struct-definition"
+        },
+        {
+            "include": "#variable-assignment"
+        },
+        {
+            "include": "#functions"
+        },
+        {
+            "include": "#constants"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#type-usage"
+        }
+    ],
+    "repository": {
+        "comments-multi": {
+            "name": "comment.block.jask",
+            "begin": ";;",
+            "end": ";;"
+        },
+        "comments-single": {
+            "name": "comment.line.semicolon.jask",
+            "match": ";.*$"
+        },
+        "operators": {
+    "patterns": [
+        {
+            "name": "keyword.operator.arrow.jask",
+            "match": "->"
+        },
+        {
+            "name": "keyword.operator.comparison.jask",
+            "match": "==|!=|<=|>="
+        },
+        {
+            "name": "keyword.operator.assignment.jask",
+            "match": "="
+        },
+        {
+            "name": "keyword.operator.jask",
+            "match": "[+\\-*/%!<>]"
+        }
+    ]
+},
+        "keywords": {
+            "patterns": [{
+                "name": "keyword.control.jask",
+                "match": "\\b(if|else|endif|while|endwhile|for|endfor|return|function|end|and|is|set|restrict|struct|endstruct|continue|break)\\b"
+            }]
+        },
+        "struct-definition": {
+            "match": "\\b(struct)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+            "captures": {
+                "1": { "name": "keyword.control.jask" },
+                "2": { "name": "entity.name.type.struct.jask" }
+            }
+        },
+        "variable-assignment": {
+            "match": "\\b(set)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+            "captures": {
+                "1": { "name": "keyword.control.jask" },
+                "2": { "name": "variable.other.assignment.jask" }
+            }
+        },
+        "type-usage": {
+            "match": "\\b([A-Z][A-Za-z0-9_]*)\\b(?=\\s*\\()",
+            "name": "entity.name.type.jask"
+        },
+        "functions": {
+            "patterns": [
+                {
+                    "name": "support.function.builtin.jask",
+                    "match": "\\b(print)\\b"
+                },
+                {
+                    "name": "entity.name.function.jask",
+                    "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\b(?=\\s*\\()"
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [{
+                "name": "constant.language.boolean.jask",
+                "match": "\\b(true|false)\\b"
+            }]
+        },
+        "numbers": {
+            "patterns": [{
+                "name": "constant.numeric.jask",
+                "match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+            }]
+        },
+        "strings": {
+            "name": "string.quoted.double.jask",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.jask",
+                    "match": "\\\\."
+                }
+            ]
+        }
+    },
+    "scopeName": "source.jask"
+}
