@@ -49,8 +49,8 @@
         "operators": {
     "patterns": [
         {
-            "name": "keyword.operator.arrow.jask",
-            "match": "->"
+            "name": "keyword.operator.dot.jask",
+            "match": "."
         },
         {
             "name": "keyword.operator.comparison.jask",
@@ -69,7 +69,7 @@
         "keywords": {
             "patterns": [{
                 "name": "keyword.control.jask",
-                "match": "\\b(if|else|endif|while|endwhile|for|endfor|return|function|end|and|is|set|restrict|struct|endstruct|continue|break)\\b"
+                "match": "\\b(if|else|endif|while|endwhile|for|endfor|return|function|endfunction|and|is|set|restrict|struct|endstruct|continue|break)\\b"
             }]
         },
         "struct-definition": {

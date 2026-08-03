@@ -4,7 +4,7 @@
         "blockComment": [ ";;", ";;" ]
     },
     "brackets": [
-        ["function", "end"],
+        ["function", "endfunction"],
         ["struct", "endstruct"],
         ["if", "endif"],
         ["while", "endwhile"],
@@ -23,7 +23,7 @@
     "folding": {
         "markers": {
             "start": "^\\s*(function|struct|if|while|for)\\b",
-            "end": "^\\s*(end|endstruct|endif|endwhile|endfor)\\b"
+            "end": "^\\s*(endfunction|endstruct|endif|endwhile|endfor)\\b"
         }
     }
 }
